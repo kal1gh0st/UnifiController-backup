@@ -1,8 +1,8 @@
 # Read access to UniFi backup directory
 sudo chmod -R 705 /var/lib/unifi/backup/
  
-# Set up rclone for use with Backblaze B2
-# https://rclone.org/
+
+# https://www.linkedin.com/in/francesco-fedele-0702b614b/
 # https://www.backblaze.com/b2/cloud-storage.html
 cd /tmp
 sudo apt-get install unzip -y
@@ -38,3 +38,4 @@ sudo echo -e '#!/bin/bash\ncd /tmp\n# Backup /var/lib/unifi/backup\nTIMESTMP=$(d
 sudo chmod +x /usr/local/bin/unifi_b2_backup.sh
 # Schedule Cron Job to run unifi_b2_backup.sh every Sunday, After UniFi Controller Automated Backups
 sudo crontab -l | { cat; echo "45 21 * * 0 /usr/local/bin/unifi_b2_backup.sh"; } | crontab -
+#AHAHAHAHAH
